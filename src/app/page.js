@@ -14,9 +14,7 @@ export default function Home() {
       <Introduction />
       <AboutMe />
       <Projects />
-      <Suspense>
-        <Services />
-      </Suspense>
+      <Services />
       <Skills />
       <Contact />
     </>

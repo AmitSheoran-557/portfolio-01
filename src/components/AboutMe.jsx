@@ -9,10 +9,9 @@ import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
     const [hasTyped, setHasTyped] = useState(false);
-
     const { ref, inView } = useInView({
-        triggerOnce: true,  // only trigger once
-        threshold: 0.5,      // half of the component should be in view
+        triggerOnce: true,
+        threshold: 0.5,
     });
 
     if (inView && !hasTyped) {
@@ -21,23 +20,23 @@ const AboutMe = () => {
     useEffect(() => {
         const ctx = gsap.context(() => {
             const mm = gsap.matchMedia()
-            // your animations
             gsap.registerPlugin(ScrollTrigger);
-
-
             gsap.from(".decorative-line-about", {
                 scrollTrigger: {
                     trigger: ".about",
                     start: "top 80%",
                     end: "top 0%",
+                    scrub: 3,
+                    duration: 2,
                 },
+
                 stagger: {
                     amount: 2,
                     start: 0.9,
                     from: "start"
                 },
                 height: 0,
-                duration: 2,
+                duration: 3,
                 stagger: 0.2,
                 ease: "power2.out",
                 touchAction: "reverse",
@@ -46,18 +45,37 @@ const AboutMe = () => {
                 gsap.from(".about-card", {
                     x: 400,
                     opacity: 0,
-                    duration: 2,
+                    duration: 4,
                     ease: "power4.out",
                     stagger: {
-                        amount: 2,
+                        amount: 10,
+                        start: 0.3,
+                        from: "start",
+                    },
+                    scrollTrigger: {
+                        trigger: '.about',
+                        start: "top 45%",
+                        end: "top 0%",
+                        scrub: 4,
+                        duration: 6,
+                    }
+                });
+
+                gsap.from(".resume-btn", {
+                    y: 800,
+                    duration: 4,
+                    ease: "power4.out",
+                    stagger: {
+                        amount: 4,
                         start: 0.9,
                         from: "start"
                     },
                     scrollTrigger: {
                         trigger: '.about',
-                        start: "top top",
-                        end: "top 20%",
+                        start: "45% top",
+                        end: "top 60%",
                         scrub: 3,
+                        duration: 3,
                     }
                 });
             });
@@ -74,44 +92,66 @@ const AboutMe = () => {
                     },
                     scrollTrigger: {
                         trigger: '.about',
+                        start: "top 65%",
+                        end: "top 20%",
+                        scrub: 3,
+                        duration: 2,
+                    }
+
+                });
+                gsap.from(".heading", {
+                    opacity: 0,
+                    y: -50,
+                    duration: 2.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: '.about',
                         start: "top 80%",
                         end: "top 20%",
                         scrub: 3,
                     }
+                },)
+                gsap.from(".about-subheading", {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: '.about',
+                        start: "top 75%",
+                        end: "top 20%",
+                        scrub: 3,
+                    }
+                }, "-=1")
+                gsap.from(".resume-btn", {
+                    y: 400,
+                    opacity: 0,
+                    duration: 2,
+                    ease: "power4.out",
+                    stagger: {
+                        amount: 2,
+                        start: 0.9,
+                        from: "start"
+                    },
+                    scrollTrigger: {
+                        trigger: '.about',
+                        start: "top 40%",
+                        end: "top 0%",
+                        scrub: 3,
+                    }
                 });
-            });
-            gsap.from(".resume-btn", {
-                y: 400,
-                opacity: 0,
-                duration: 2,
-                ease: "power4.out",
-                stagger: {
-                    amount: 2,
-                    start: 0.9,
-                    from: "start"
-                },
-                scrollTrigger: {
-                    trigger: '.about',
-                    start: "top 40%",
-                    end: "top 0%",
-                    scrub: 3,
-                }
             });
         });
         return () => ctx.revert();
     }, []);
 
     return (
-        <div ref={ref} id="about" className="relative about bg-gradient-to-b from-[#e1e2db] to-zinc-400 overflow-hidden lg:py-20 md:py-16 py-12 flex items-center justify-center">
-            {/* Decorative Lines */}
-            <div className="decorative-line-about absolute top-0 lg:left-1/4 md:left-28 left-20 h-full w-2 bg-zinc-400 opacity-70" />
+        <div ref={ref} id="about" className="relative about bg-gradient-to-b from-[#e1e2db] to-zinc-400 overflow-hidden lg:py-20 md:py-16 py-12 flex justify-center">
+            <div className="decorative-line-about absolute top-0 lg:left-1/4 md:left-28 left-20 h-full w-2 bg-gradient-to-b from-[#e1e2db] to-slate-400 opacity-70" />
             <div className="decorative-line-about absolute lg:top-10 top-6 lg:right-10 sm:right-5 right-0 lg:w-1/4 w-2/4 h-2 lg:bg-gradient-to-l bg-gradient-to-r from-[#e1e2db] to-zinc-400 opacity-70" />
-
-            {/* Main Content */}
             <div className="relative z-10 max-w-[1172px] px-4 text-center">
-                <CustomHeading titleOne="About" titleTwo="Me" />
-
-                <p className="md:text-lg lg:text-xl text-zinc-500 font-medium leading-relaxed px-4">
+                <CustomHeading titleOne="About" titleTwo="Me" customClass={"heading"} />
+                <p className="md:text-lg lg:text-xl about-subheading text-zinc-500 font-medium leading-relaxed px-4">
                     {hasTyped ? (
                         <>
                             <Typewriter
@@ -127,8 +167,6 @@ const AboutMe = () => {
                         </>
                     ) : null}
                 </p>
-
-
 
                 <div className="mt-12 flex flex-wrap 2xl:gap-6 xl:gap-5 gap-4 text-left relative justify-center">
                     {ABOUT_ME_CARDS_DATA.map((card, index) => (
@@ -154,7 +192,7 @@ const AboutMe = () => {
                     </a>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

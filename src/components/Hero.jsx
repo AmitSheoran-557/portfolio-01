@@ -12,12 +12,12 @@ const Hero = () => {
             const mm = gsap.matchMedia();
 
             mm.add("(max-width: 768px)", () => {
-                gsap.from(".profile-img", { y: -100, scale: 0.8, opacity: 0 });
+                gsap.from(".profile-img", { x: -400, scale: 0.8, opacity: 0, });
                 gsap.from(".profile-name", { y: 30, opacity: 0, delay: 0.5 });
             });
 
             mm.add("(min-width: 769px)", () => {
-                gsap.from(".profile-img", { x: -200, opacity: 0, rotate: -360 });
+                gsap.from(".profile-img", { x: -300, rotate: -360, duration: 2, });
                 gsap.from(".profile-name", { y: 50, opacity: 0, delay: 0.5 });
             });
         });
@@ -26,27 +26,27 @@ const Hero = () => {
     }, []);
 
     return (
-        <div id='hero' className='w-full flex justify-center items-center relative'>
+        <div id='hero' className='w-full flex justify-center items-center overflow-hidden relative'>
             <Image className='absolute bottom-0 right-0 lg:top-3 max-w-[124px] md:bottom-12' src="/assets/images/webp/dots-img.webp" alt="dots-img" height={62} width={124} />
             <div className="w-full bg-gradient-to-b from-[#e1e2db] to-slate-400 flex flex-col items-center justify-center xl:py-36 lg:py-28 max-lg:pb-32 max-md:pb-20 max-sm:pb-16 max-lg:pt-12">
                 <div className="w-full xl:max-w-5xl lg:max-w-3xl md:max-w-3xl p-6 relative flex flex-col md:flex-row items-center md:items-center max-md:!justify-center max-lg:justify-between space-y-4 md:space-y-0 md:space-x-6">
                     <motion.div
                         initial={{ width: 0, }}
                         animate={{ width: 128, opacity: 1 }}
-                        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+                        transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
                         className="absolute lg:top-20 md:top-10 top-0 lg:-left-6 left-0 lg:max-w-32 sm:max-w-14 max-w-7 w-full md:h-5 h-80 bg-zinc-400 mb-4"
                     ></motion.div>
                     <div className="profile-img w-full xl:max-w-xs xl:max-h-[320px] max-w-[296px] max-h-[296px] lg:rounded-full rounded-[60px_0px_60px_0px] overflow-hidden flex-shrink-0">
                         <motion.div
                             initial={{ width: 0, }}
                             animate={{ width: 128, opacity: 1 }}
-                            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+                            transition={{ duration: 2, delay: 1, ease: "easeOut" }}
                             className="absolute top-16 -left-6 max-w-32 w-full h-3 bg-zinc-400 mb-4"
                         ></motion.div>
                         <motion.div
                             initial={{ width: 0, }}
                             animate={{ width: 128, opacity: 1 }}
-                            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+                            transition={{ duration: 2, delay: 1, ease: "easeOut" }}
                             className="absolute bottom-10 -right-6 max-w-32 w-full h-3 bg-zinc-400 mb-4"
                         ></motion.div>
                         <Image src="/assets/images/webp/profile-img.webp" alt="Profile" width={296} height={296} className="object-cover pointer-events-none w-full h-full" />
@@ -80,7 +80,7 @@ const Hero = () => {
                         <motion.span
                             initial={{ x: 40, opacity: 0, left: 0 }}
                             animate={{ x: 0, opacity: 1, left: 290 }}
-                            transition={{ duration: 1.5, delay: 1.5 }}
+                            transition={{ duration: 2.5, delay: 1.5 }}
                             className="absolute max-w-4 w-full h-10 animate-pulse bottom-0 bg-black/40"
                         />
                     </motion.div>
@@ -89,6 +89,8 @@ const Hero = () => {
                     <motion.div initial={{ y: 80, scale: 0.8 }} animate={{ y: 0, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }}
                         className="absolute bottom-0 right-0 max-w-xs w-full h-32 max-md:hidden bg-zinc-400">
                         <motion.span
+                            initial={{ x: 40, opacity: 0, left: 0 }}
+                            //  animate={{ x: 0, opacity: 1, left: 290 }}
                             animate={{ y: [0, -17, 0] }}
                             transition={{
                                 repeat: Infinity,

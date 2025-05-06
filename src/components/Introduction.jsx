@@ -18,7 +18,6 @@ const Introduction = () => {
                     toggleActions: "restart none none none",
                     scrub: 3,
                     duration: 2,
-                    markers: true,
                 }
             });
 
