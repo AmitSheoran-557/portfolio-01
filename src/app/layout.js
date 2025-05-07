@@ -1,6 +1,7 @@
 import Header from "@/components/common/Header";
 import "./globals.css";
 import Footer from "@/components/common/Footer";
+import PageLoader from "@/components/common/PageLoader";
 
 export const metadata = {
   title: "practice ",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="lg:pt-[113px] md:pt-[87px] pt-[74px]">
+        {/* <PageLoader /> */}
         <Header />
         {children}
         <Footer />

@@ -6,40 +6,37 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useInView } from 'react-intersection-observer';
 
-// ✅ Lottie Wrapper using lottie-web + Intersection Observer
-const LottieWrapper = ({ animationData }) => {
-    const containerRef = useRef(null);
-    const { ref, inView } = useInView({ triggerOnce: true });
-
-    useEffect(() => {
-        if (inView && containerRef.current) {
-            const anim = lottie.loadAnimation({
-                container: containerRef.current,
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                animationData,
-            });
-            return () => anim.destroy();
-        }
-    }, [inView, animationData]);
-
-    useEffect(() => {
-        AOS.init({
-            once: false,
-            easing: 'ease-linear',
-        });
-    }, []);
-
-    return (
-        <div ref={ref}>
-            <div ref={containerRef} className="lg:w-[140px] lg:h-[140px] w-[100px] h-[100px]" />
-        </div>
-    );
-
-};
-
 const Services = () => {
+    const LottieWrapper = ({ animationData }) => {
+        const containerRef = useRef(null);
+        const { ref, inView } = useInView({ triggerOnce: true });
+
+        useEffect(() => {
+            AOS.init({
+                once: false,
+                easing: 'ease-linear',
+            });
+            if (inView && containerRef.current) {
+                const anim = lottie.loadAnimation({
+                    container: containerRef.current,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    animationData,
+                });
+                return () => anim.destroy();
+            }
+        }, [inView, animationData]);
+
+
+
+        return (
+            <div ref={ref}>
+                <div ref={containerRef} className="lg:w-[140px] lg:h-[140px] w-[100px] h-[100px]" />
+            </div>
+        );
+
+    };
 
     return (
         <div id='services' className="services py-20 lg:px-6 px-4 bg-gradient-to-b overflow-hidden relative from-[#e1e2db] to-zinc-400">

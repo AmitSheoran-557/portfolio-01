@@ -1,1 +1,128 @@
 @import "tailwindcss";
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoomIn {
+    animation: zoomIn 2s infinite alternate ease-in-out;
+}
+
+.zoomOut {
+    animation: zoomOut 2s infinite alternate ease-in-out;
+}
+
+@keyframes bounceCustom {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    15% {
+        transform: translate(-80%, -60%);
+    }
+
+    30% {
+        transform: translate(-30%, -170%);
+    }
+
+    45% {
+        transform: translate(200%, -100%);
+    }
+
+    60% {
+        transform: translate(-110%, -190%);
+    }
+
+    75% {
+        transform: translate(-140%, -120%);
+    }
+
+    90% {
+        transform: translate(-150%, -130%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes revolve {
+    30% {
+        transform: translateY(-30%) translateX(0%);
+    }
+
+    45% {
+        transform: translateY(250%) translateX(50%);
+    }
+
+    50% {
+        transform: translateY(150%) translateX(-240%);
+    }
+
+    60% {
+        transform: translateY(-50%) translateX(-250%);
+    }
+
+    70% {
+        transform: translateY(-100%) translateX(-90%);
+    }
+
+    100% {
+        transform: translateY(0%) translateX(0%);
+    }
+}
+
+@keyframes floatStarTwo {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    20% {
+        transform: translateY(-20%) translateX(-60%);
+    }
+
+    40% {
+        transform: translateY(150%) translateX(130%);
+    }
+
+    60% {
+        transform: translateY(100%) translateX(-60%);
+    }
+
+    80% {
+        transform: translateY(-200%) translateX(200%);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Animation classes */
+.bounceCustom {
+    animation: bounceCustom 17s ease-in-out infinite;
+}
+
+.revolve {
+    animation: revolve 14s ease-in-out infinite;
+}
+
+.floatStarTwo {
+    animation: floatStarTwo 17s ease-in-out infinite;
+}

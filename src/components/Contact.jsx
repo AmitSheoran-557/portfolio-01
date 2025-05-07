@@ -1,10 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import CustomHeading from "./common/CustomHeading";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Contact = () => {
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
@@ -14,7 +15,14 @@ const Contact = () => {
         formState: { errors },
         reset,
     } = useForm();
-
+    useEffect(() => {
+        AOS.init({
+            once: false,
+            easing: 'ease-linear',
+            duration: 2000,
+            delay: 500,
+        });
+    }, []);
     const sendEmail = async (data) => {
         setLoading(true);
         try {
@@ -49,7 +57,7 @@ const Contact = () => {
 
                 <div className="grid lg:grid-cols-2 gap-10">
                     {/* Info Box */}
-                    <div className="bg-white/70 border border-zinc-200 backdrop-blur-md rounded-xl p-6 shadow-lg">
+                    <div data-aos="zoom-in-right" className="bg-white/70 border border-zinc-200 backdrop-blur-md rounded-xl p-6 shadow-lg">
                         <h3 className="text-xl font-semibold text-slate-700 mb-4">📬 Contact Info</h3>
                         <ul className="text-slate-600 space-y-3 text-sm leading-relaxed">
                             <li><strong>Email:</strong> your.email@example.com</li>
@@ -62,7 +70,7 @@ const Contact = () => {
                     </div>
 
                     {/* Contact Form */}
-                    <form
+                    <form data-aos="zoom-in-left"
                         ref={formRef}
                         onSubmit={handleSubmit(sendEmail)}
                         className="bg-white/80 border border-zinc-200 backdrop-blur-md rounded-xl p-6 shadow-lg space-y-5"
@@ -111,7 +119,7 @@ const Contact = () => {
                                 name="message"
                                 rows="4"
                                 placeholder="Type your message..."
-                                className="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white/60 text-slate-800 max-h-80"
+                                className="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white/60 text-slate-800 max-h-80 min-h-20"
                             />
                             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
                         </div>

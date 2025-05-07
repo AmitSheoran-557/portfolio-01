@@ -29,13 +29,12 @@ const AboutMe = () => {
                     scrub: 3,
                     duration: 2,
                 },
-
                 stagger: {
-                    amount: 2,
+                    amount: 1,
                     start: 0.9,
                     from: "start"
                 },
-                height: 0,
+                height: 50,
                 duration: 3,
                 stagger: 0.2,
                 ease: "power2.out",
@@ -147,7 +146,7 @@ const AboutMe = () => {
 
     return (
         <div ref={ref} id="about" className="relative about bg-gradient-to-b from-[#e1e2db] to-zinc-400 overflow-hidden lg:py-20 md:py-16 py-12 flex justify-center">
-            <div className="decorative-line-about absolute top-0 lg:left-1/4 md:left-28 left-20 h-full w-2 bg-gradient-to-b from-[#e1e2db] to-slate-400 opacity-70" />
+            <div className="decorative-line-about absolute top-0 lg:left-1/4 md:left-28 left-20 max-h-screen h-full w-2 bg-gradient-to-b from-[#e1e2db] to-slate-400 opacity-70" />
             <div className="decorative-line-about absolute lg:top-10 top-6 lg:right-10 sm:right-5 right-0 lg:w-1/4 w-2/4 h-2 lg:bg-gradient-to-l bg-gradient-to-r from-[#e1e2db] to-zinc-400 opacity-70" />
             <div className="relative z-10 max-w-[1172px] px-4 text-center">
                 <CustomHeading titleOne="About" titleTwo="Me" customClass={"heading"} />

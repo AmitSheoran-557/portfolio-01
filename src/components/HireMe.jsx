@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 
-const HireMeSection = () => {
+const HireMe = () => {
     return (
         <div className="relative h-full py-40 px-4 md:px-8 bg-gradient-to-br from-[#e1e2db] to-slate-200">
             {/* Decorative Line */}
@@ -19,7 +19,7 @@ const HireMeSection = () => {
                         href="/contact"
                         className="bg-slate-700 hover:bg-transparent hover:text-slate-700 ease-linear duration-300 text-white py-3 px-6 rounded-md transition-all border border-transparent hover:border-slate-600 shadow-lg hover:shadow-xl"
                     >
-                        Hire Me
+                        Direct Message
                     </Link>
                     <a
                         href="mailto:amit22082006@gmail.com"
@@ -33,4 +33,4 @@ const HireMeSection = () => {
     );
 };
 
-export default HireMeSection;
+export default HireMe;

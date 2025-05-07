@@ -12,10 +12,9 @@ const Header = () => {
 
 
     return (
-        <div className='bg-white fixed z-50 top-0 backdrop-blur-lg w-full'>
-
-            <div className="bg-white max-w-[1272px] mx-auto lg:p-4 p-2 w-full ">
-                <div className="bg-black/35  w-full flex justify-between lg:py-6 md:py-5 py-4 items-center lg:px-9 md:px-7 sm:px-5 px-4 rounded-[60px] border-white/15 border">
+        <div className='bg-transparent fixed z-50 top-0 backdrop-blur-lg w-full'>
+            <div className="bg-transparent max-w-[1272px] mx-auto lg:p-4 p-2 w-full ">
+                <div className="bg-black/35 w-full flex justify-between lg:py-6 md:py-5 py-4 items-center lg:px-9 md:px-7 sm:px-5 px-4 rounded-[60px] border-white/15 border">
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center lg:gap-10 md:gap-7 gap-4">
                             <button onClick={() => setIsOpen(!isOpen)} className="flex flex-col items- z-[100] gap-1.5 lg:hidden relative w-[18px] h-[14px] mr-6" >

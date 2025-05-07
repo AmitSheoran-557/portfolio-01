@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Projects = () => {
+const Project = () => {
     const [search, setSearch] = useState("")
     const [filteredProjects, setFilteredProjects] = useState(PROJECTS_DATA_LIST);
 
@@ -71,8 +71,19 @@ const Projects = () => {
                             start: 0.9,
                             from: "start"
                         },
-                        // scrub: 3,
-                    }, "-=0.4");
+                    }, "-=0.4")
+                    .from(".project-btn", {
+                        y: 400,
+                        opacity: 0,
+                        duration: 2,
+                        ease: "power4.out",
+                        stagger: {
+                            amount: 2,
+                            start: 0.9,
+                            from: "start"
+                        },
+
+                    });
             })
             mm.add("(max-width: 768px)", () => {
                 tl.from(".project-heading", {
@@ -82,6 +93,7 @@ const Projects = () => {
                     ease: "power2.out",
                 },)
             })
+
         });
         return () => ctx.revert();
     },);
@@ -89,7 +101,7 @@ const Projects = () => {
     return (
         <div
             id="projects"
-            className="bg-[#e1e2db] projects text-zinc-700 py-20 relative overflow-hidden"
+            className="bg-[#e1e2db] projects text-zinc-700 lg:py-20 max-lg:pt-16 max-lg:pb-12 relative overflow-hidden"
         >
             {/* Decorative Lines */}
             <div className="decorative-line absolute top-10 left-0 w-full h-2 bg-gradient-to-l from-zinc-400 via-slate-400 to-transparent"></div>
@@ -101,11 +113,11 @@ const Projects = () => {
             </div>
 
             <div className="max-w-[1172px] px-4 mx-auto">
-                <div className="project-heading text-center xl:mb-16 lg:mb-12 md:mb-10 mb-7">
+                <div className="project-heading text-center xl:mb-16 lg:mb-12 md:mb-10 !mb-7">
                     <CustomHeading titleOne="My" titleTwo="Projects" />
                 </div>
 
-                <div className="mx-auto flex justify-start xl:ps-0 lg:ps-4 mb-8 relative">
+                <div className="mx-auto flex justify-start xl:ps-0 lg:ps-4 xl:mb-8 lg:mb-7 md:mb-6 mb-4 max-sm:mt-10 relative">
                     <input className="bg-white border border-zinc-300 z-10 text-gray-400 rounded-full py-2 px-4 max-w-sm w-full outline-none" placeholder="Search Projects..." type="search" value={search} onChange={handleSearch} />
                     <div className="absolute left-10 me-3 top-4 bg-slate-500 h-3 w-full lg:hidden max-lg:block"></div>
                 </div>
@@ -113,7 +125,7 @@ const Projects = () => {
                     <div className="flex flex-wrap 2xl:gap-6 xl:gap-5 gap-4 justify-center">
                         {filteredProjects.map((project, index) => (
                             <div className="project-cards" key={index}>
-                                <div className=" bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
+                                <div className=" bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden  hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
                                     <div className="h-48 overflow-hidden">
                                         <Image
                                             src={project.image}
@@ -153,12 +165,16 @@ const Projects = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="mt-12 project-btn flex justify-center">
+                        <Link href="/projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
+                    </div>
                 </div>
-                <div className=" max-lg:block lg:hidden">
+
+                <div className="max-lg:block lg:hidden">
                     <div className="flex flex-wrap 2xl:gap-6 xl:gap-5 gap-4 justify-center">
                         {filteredProjects.map((project, index) => (
                             <div key={index}>
-                                <div data-aos="fade-right" className=" bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
+                                <div data-aos="fade-right" className="bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
                                     <div className="h-48 overflow-hidden">
                                         <Image
                                             src={project.image}
@@ -197,6 +213,9 @@ const Projects = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                    <div data-aos="fade-up" className="xl:mt-12 lg:mt-10 md:mt-8 mt-6 flex justify-center">
+                        <Link href="/projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
                     </div>
                 </div>
             </div>
@@ -204,4 +223,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default Project;
