@@ -4,32 +4,32 @@ import Footer from "@/components/common/Footer";
 import PageLoader from "@/components/common/PageLoader";
 
 export const metadata = {
-  title: "practice ",
+  title: "Portfolio",
   description: "Welcome back! Please enter your details.",
   openGraph: {
-    title: "practice ",
+    title: "Portfolio",
     description: "Welcome back! Please enter your details.",
     images: [
       {
-        url: "/meta-image.png",
+        url: "/meta-data-img.webp",
         width: 800,
         height: 600,
-        alt: "practice  Branding Image",
+        alt: "Portfolio Branding Image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "practice ",
+    title: "Portfolio",
     description: "Welcome back! Please enter your details.",
-    images: ["/meta-image.png"],
+    images: ["/meta-data-img.webp"],
   },
 };
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="lg:pt-[113px] md:pt-[87px] pt-[74px]">
-        {/* <PageLoader /> */}
+        <PageLoader />
         <Header />
         {children}
         <Footer />
