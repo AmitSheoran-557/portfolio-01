@@ -91,8 +91,6 @@ const Hero = () => {
                     <motion.div initial={{ y: 80, scale: 0.8 }} animate={{ y: 0, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }}
                         className="absolute bottom-0 right-0 max-w-xs w-full h-32 max-md:hidden bg-zinc-400">
                         <motion.span
-                            // initial={{ x: 40, opacity: 0, left: 0 }}
-                            //  animate={{ x: 0, opacity: 1, left: 290 }}
                             animate={{ y: [0, -13, 0] }}
                             transition={{
                                 repeat: Infinity,

@@ -78,17 +78,17 @@ export const ABOUT_ME_CARDS_DATA = [
 
 export const PROJECTS_DATA_LIST = [
     {
-        title: "Portfolio Website",
-        description: "Personal portfolio built with Next.js, Tailwind CSS, and hosted on Vercel.",
+        title: "Blog Website",
+        description: "Blog Website built with Next.js, Tailwind CSS, and hosted on Vercel.",
         image: "/assets/images/webp/project-thumbnail-img-1.webp",
-        link: "https://your-portfolio-link.com",
+        link: "https://arrow-trade-ten.vercel.app/",
         tags: ["Next.js", "Tailwind", "Vercel"],
     },
     {
-        title: "Startup Landing Page",
-        description: "Animated landing page using GSAP for smooth transitions and Firebase backend.",
+        title: "Modern Blog Website | Next.js & Tailwind CSS",
+        description: "A responsive blog platform built with Next.js, Tailwind CSS,. Supports dynamic routing,",
         image: "/assets/images/webp/project-thumbnail-img-2.webp",
-        link: "https://startup-demo.com",
+        link: "https://shop-nomvbosa9-amits-projects-fb1a793d.vercel.app/",
         tags: ["GSAP", "Firebase", "Responsive"],
     },
     {
