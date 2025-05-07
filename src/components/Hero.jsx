@@ -17,12 +17,12 @@ const Hero = () => {
             });
 
             mm.add("(min-width: 769px)", () => {
-                gsap.from(".profile-img", { x: -300, rotate: -360, duration: 2, });
+                gsap.from(".profile-img", { x: -400, scale: 0.8, opacity: 0, duration: 2 });
                 gsap.from(".profile-name", { y: 50, opacity: 0, delay: 0.5 });
             });
         });
 
-        return () => ctx.revert(); // clean up
+        return () => ctx.revert();
     }, []);
 
     return (

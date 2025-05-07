@@ -60,9 +60,9 @@ const Contact = () => {
                     <div data-aos="zoom-in-right" className="bg-white/70 border border-zinc-200 backdrop-blur-md rounded-xl p-6 shadow-lg">
                         <h3 className="text-xl font-semibold text-slate-700 mb-4">📬 Contact Info</h3>
                         <ul className="text-slate-600 space-y-3 text-sm leading-relaxed">
-                            <li><strong>Email:</strong> your.email@example.com</li>
-                            <li><strong>Phone:</strong> +91 12345 67890</li>
-                            <li><strong>Location:</strong> Singhani, India</li>
+                            <li><strong>Email:</strong> amit22082006@gmail.com</li>
+                            <li><strong>Phone:</strong> +91 8222823313</li>
+                            <li><strong>Location:</strong> Hisar, India</li>
                         </ul>
                         <p className="mt-6 text-xs text-slate-400 italic">
                             I'm also active on GitHub and LinkedIn — let's connect!
