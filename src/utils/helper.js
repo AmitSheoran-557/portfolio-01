@@ -85,18 +85,18 @@ export const PROJECTS_DATA_LIST = [
         tags: ["Next.js", "Tailwind", "Vercel"],
     },
     {
-        title: "Modern Blog Website | Next.js & Tailwind CSS",
-        description: "A responsive blog platform built with Next.js, Tailwind CSS,. Supports dynamic routing,",
+        title: "E-commerce Website | Next.js & Tailwind CSS",
+        description: "A responsive e-commerce platform built with Next.js, Tailwind CSS,. Supports dynamic routing,",
         image: "/assets/images/webp/project-thumbnail-img-2.webp",
         link: "https://shop-nomvbosa9-amits-projects-fb1a793d.vercel.app/",
         tags: ["GSAP", "Firebase", "Responsive"],
     },
     {
-        title: "Weather App",
-        description: "A simple weather application built using React and OpenWeatherMap API.",
+        title: "Allsome / A Copy Platform",
+        description: "Sell & ship everywhere. Turn inventory into sales channels and grow faster.",
         image: "/assets/images/webp/project-thumbnail-img-3.webp",
-        link: "https://weather-now.com",
-        tags: ["React", "API", "Styled UI"],
+        link: "https://allsome-next-xi.vercel.app/",
+        tags: ["Next.js", "Tailwind", "Vercel"],
     },
 ];
 

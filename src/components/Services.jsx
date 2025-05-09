@@ -42,7 +42,7 @@ const Services = () => {
 
     // ✅ Initialize AOS once
     useEffect(() => {
-        AOS.init({ easing: "ease-out-quad", duration: 1000 });
+        AOS.init({ easing: "ease-out-quad", duration: 500 });
     }, []);
 
     return (

@@ -3,8 +3,9 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div>
-            <Project />
+        <div className='h-[80vh] w-full flex justify-center items-center'>
+            {/* <Project /> */}
+            <h3 className='text-3xl font-bold'>All Projects are Coming Soon</h3>
         </div>
     )
 }

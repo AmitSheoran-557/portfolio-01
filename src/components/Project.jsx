@@ -26,6 +26,7 @@ const Project = () => {
         AOS.init({
             once: false,
             easing: 'ease-linear',
+            duration: 500,
         });
     }, []);
 
