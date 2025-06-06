@@ -40,7 +40,7 @@ export const FOOTER_SOCIAL_DATA_LIST = [
     {
         iconImg: "/assets/images/svg/instagram-logo.svg",
         alt: "instagram-logo",
-        path: "https://github.com/",
+        path: "https://www.instagram.com/nxtend.code?igsh=dXFsNWV4YWZvd3Fz&utm_source=qr",
     },
     {
         iconImg: "/assets/images/svg/telegram-logo.svg",
@@ -50,7 +50,7 @@ export const FOOTER_SOCIAL_DATA_LIST = [
     {
         iconImg: "/assets/images/svg/github-logo.svg",
         alt: "github-logo",
-        path: "https://github.com/",
+        path: "https://github.com/AmitSheoran-557",
     }
 ];
 
@@ -78,25 +78,52 @@ export const ABOUT_ME_CARDS_DATA = [
 
 export const PROJECTS_DATA_LIST = [
     {
-        title: "Blog Website",
-        description: "Blog Website built with Next.js, Tailwind CSS, and hosted on Vercel.",
-        image: "/assets/images/webp/project-thumbnail-img-1.webp",
-        link: "https://arrow-trade-ten.vercel.app/",
-        tags: ["Next.js", "Tailwind", "Vercel"],
+        title: "Zelt",
+        description: "Zelt built with HTML, Canvas, Tailwind CSS, locomotive and hosted on Vercel.",
+        image: "/assets/images/png/project-thumbnail-img-1.png",
+        link: "https://zelt-one.vercel.app/",
+        tags: ["HTML", "Tailwind", "Vercel"],
+        showInProjects: true,
     },
     {
-        title: "E-commerce Website | Next.js & Tailwind CSS",
-        description: "A responsive e-commerce platform built with Next.js, Tailwind CSS,. Supports dynamic routing,",
-        image: "/assets/images/webp/project-thumbnail-img-2.webp",
-        link: "https://shop-nomvbosa9-amits-projects-fb1a793d.vercel.app/",
+        title: "Cyber Fiction Website | HTML & Tailwind CSS",
+        description: "A responsive Cyber Fiction platform built with HTML, canvas, locomotive, Tailwind CSS,",
+        image: "/assets/images/png/project-thumbnail-img-2.png",
+        link: "https://cyber-fiction-lyart.vercel.app/",
         tags: ["GSAP", "Firebase", "Responsive"],
+        showInProjects: true,
     },
     {
         title: "Allsome / A Copy Platform",
         description: "Sell & ship everywhere. Turn inventory into sales channels and grow faster.",
-        image: "/assets/images/webp/project-thumbnail-img-3.webp",
+        image: "/assets/images/png/project-thumbnail-img-3.png",
         link: "https://allsome-next-xi.vercel.app/",
         tags: ["Next.js", "Tailwind", "Vercel"],
+        showInProjects: true,
+    },
+    {
+        title: "Blog Website",
+        description: "Blog Website built with Next.js, Tailwind CSS, and hosted on Vercel.",
+        image: "/assets/images/png/project-thumbnail-img-4.png",
+        link: "https://arrow-trade-ten.vercel.app/",
+        tags: ["Next.js", "Tailwind", "Vercel"],
+        showInProjects: false,
+    },
+    {
+        title: "E-commerce Website | Next.js & Tailwind CSS",
+        description: "A responsive e-commerce platform built with Next.js, Tailwind CSS,. Supports dynamic routing,",
+        image: "/assets/images/png/project-thumbnail-img-5.png",
+        link: "https://shop-nomvbosa9-amits-projects-fb1a793d.vercel.app/",
+        tags: ["GSAP", "Firebase", "Responsive"],
+        showInProjects: false,
+    },
+    {
+        title: "Allsome / A Copy Platform",
+        description: "Sell & ship everywhere. Turn inventory into sales channels and grow faster.",
+        image: "/assets/images/png/project-thumbnail-img-3.png",
+        link: "https://allsome-next-xi.vercel.app/",
+        tags: ["Next.js", "Tailwind", "Vercel"],
+        showInProjects: false,
     },
 ];
 

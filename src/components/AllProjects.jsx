@@ -10,19 +10,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Project = () => {
+const AllProjects = () => {
     const [search, setSearch] = useState("")
-    const [filteredProjects, setFilteredProjects] = useState(PROJECTS_DATA_LIST.filter(project => project.showInProjects));
-
+    const [filteredProjects, setFilteredProjects] = useState(PROJECTS_DATA_LIST);
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
-        const filtered = PROJECTS_DATA_LIST.filter((project) => project.showInProjects &&
+        const filtered = PROJECTS_DATA_LIST.filter((project) =>
             project.title.toLowerCase().includes(e.target.value.toLowerCase())
         );
         setFilteredProjects(filtered);
     };
-
     useEffect(() => {
         AOS.init({
             once: false,
@@ -35,6 +33,7 @@ const Project = () => {
         const ctx = gsap.context(() => {
             gsap.registerPlugin(ScrollTrigger);
             const mm = gsap.matchMedia()
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".projects",
@@ -51,7 +50,6 @@ const Project = () => {
                 duration: 3.6,
                 stagger: 1.4,
                 ease: "power2.out",
-                // scrub: 3,
             })
             mm.add("(min-width: 769px)", () => {
 
@@ -94,12 +92,15 @@ const Project = () => {
                     ease: "power2.out",
                 },)
             })
+
         });
         return () => ctx.revert();
     },);
 
     return (
-        <div id="projects" className="bg-[#e1e2db] projects text-zinc-700 lg:py-20 max-lg:pt-16 max-lg:pb-12 relative overflow-hidden">
+        <div id="projects"
+            className="bg-[#e1e2db] projects text-zinc-700 lg:py-20 max-lg:pt-16 max-lg:pb-12 relative overflow-hidden w-full"
+        >
             {/* Decorative Lines */}
             <div className="decorative-line absolute top-10 left-0 w-full h-2 bg-gradient-to-l from-zinc-400 via-slate-400 to-transparent"></div>
             <div className="decorative-line sm:max-w-28 max-w-16 absolute w-full sm:h-20 h-16 left-0 rotate-90 sm:top-20 md:top-28 top-16 bg-zinc-400">
@@ -123,8 +124,14 @@ const Project = () => {
                         {filteredProjects.map((project, index) => (
                             <div className="project-cards" key={index}>
                                 <div className=" bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden  hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
-                                    <div className="h-48 overflow-hidden">
-                                        <Image src={project.image} alt={project.title} width={600} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="h-48 overflow-hidden mx-3 mt-3 rounded-md">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            width={600}
+                                            height={300}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
                                     </div>
                                     <div className="p-5">
                                         <h3 className="xl:text-xl text-lg font-semibold text-zinc-800 mb-2">
@@ -135,12 +142,19 @@ const Project = () => {
                                         </p>
                                         <div className="flex flex-wrap gap-2 text-xs mb-4">
                                             {project.tags.map((tag, i) => (
-                                                <span key={i} className="bg-slate-400/40 px-2 py-1 rounded text-zinc-700">
+                                                <span
+                                                    key={i}
+                                                    className="bg-slate-400/40 px-2 py-1 rounded text-zinc-700"
+                                                >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
-                                        <Link href={project.link} target="_blank" className="text-sm font-medium sm:absolute bottom-4 left-4 lg:left-5 text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max">
+                                        <Link
+                                            href={project.link}
+                                            target="_blank"
+                                            className="text-sm font-medium sm:absolute bottom-4 left-4 lg:left-5 text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max"
+                                        >
                                             View Project
                                             <span className="mt-0.5"><RightArrow /></span>
                                         </Link>
@@ -149,9 +163,7 @@ const Project = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-12 project-btn flex justify-center">
-                        <Link href="/projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
-                    </div>
+
                 </div>
 
                 <div className="max-lg:block lg:hidden">
@@ -160,7 +172,13 @@ const Project = () => {
                             <div key={index}>
                                 <div data-aos="fade-right" className="bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
                                     <div className="h-48 overflow-hidden">
-                                        <Image src={project.image} alt={project.title} width={600} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            width={600}
+                                            height={300}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
                                     </div>
                                     <div className="p-5">
                                         <h3 className="xl:text-xl text-lg font-semibold text-zinc-800 mb-2">
@@ -171,12 +189,19 @@ const Project = () => {
                                         </p>
                                         <div className="flex flex-wrap gap-2 text-xs mb-4">
                                             {project.tags.map((tag, i) => (
-                                                <span key={i} className="bg-slate-400/40 px-2 py-1 rounded text-zinc-700" >
+                                                <span
+                                                    key={i}
+                                                    className="bg-slate-400/40 px-2 py-1 rounded text-zinc-700"
+                                                >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
-                                        <Link href={project.link} target="_blank" className="text-sm font-medium sm:absolute bottom-4 left-4 lg:left-5 text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max">
+                                        <Link
+                                            href={project.link}
+                                            target="_blank"
+                                            className="text-sm font-medium sm:absolute bottom-4 left-4 lg:left-5 text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max"
+                                        >
                                             View Project
                                             <span className="mt-0.5"><RightArrow /></span>
                                         </Link>
@@ -185,13 +210,11 @@ const Project = () => {
                             </div>
                         ))}
                     </div>
-                    <div data-aos="fade-up" className="xl:mt-12 lg:mt-10 md:mt-8 mt-6 flex justify-center">
-                        <Link href="/projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
-                    </div>
+
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Project;
+export default AllProjects
