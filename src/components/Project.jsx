@@ -123,9 +123,11 @@ const Project = () => {
                         {filteredProjects.map((project, index) => (
                             <div className="project-cards" key={index}>
                                 <div className=" bg-white/60 border xl:max-w-[360px] lg:max-w-[310px] sm:max-w-[330px] max-w-sm lg:h-[421px] sm:h-[420px] border-zinc-300 rounded-xl overflow-hidden  hover:shadow-2xl backdrop-blur-md transition-all ease-linear duration-300 group relative">
-                                    <div className="h-48 overflow-hidden">
-                                        <Image src={project.image} alt={project.title} width={600} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    </div>
+                                    <Link href={project.link} className="w-full" target="_blank" >
+                                        <div className="h-48 overflow-hidden">
+                                            <Image src={project.image} alt={project.title} width={600} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        </div>
+                                    </Link>
                                     <div className="p-5">
                                         <h3 className="xl:text-xl text-lg font-semibold text-zinc-800 mb-2">
                                             {project.title}
@@ -140,10 +142,17 @@ const Project = () => {
                                                 </span>
                                             ))}
                                         </div>
-                                        <Link href={project.link} target="_blank" className="text-sm font-medium sm:absolute bottom-4 left-4 lg:left-5 text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max">
-                                            View Project
-                                            <span className="mt-0.5"><RightArrow /></span>
-                                        </Link>
+                                        <div className="flex items-center w-full justify-between sm:absolute bottom-4 left-4 lg:left-5 pe-9">
+
+                                            <Link href={project.link} target="_blank" className="text-sm font-medium text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max">
+                                                View Project
+                                                <span className="mt-0.5"><RightArrow /></span>
+                                            </Link>
+                                            <Link href={project.code} target="_blank" className="text-sm font-medium text-blue-700 hover:underline flex gap-2 items-center justify-center max-w-max">
+                                                View code
+                                                <span className="mt-0.5"><RightArrow /></span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
