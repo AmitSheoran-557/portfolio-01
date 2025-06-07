@@ -52,7 +52,7 @@ const Hero = () => {
                             transition={{ duration: 2, delay: 1, ease: "easeOut" }}
                             className="absolute bottom-10 -right-6 max-w-32 w-full h-3 bg-zinc-400 mb-4"
                         ></motion.div>
-                        <Image src="/assets/images/webp/profile-img.webp" alt="Profile" width={296} height={296} className="object-cover pointer-events-none w-full h-full" />
+                        <Image src="/assets/images/png/profile-img.png" alt="Profile" width={296} height={296} className="object-cover pointer-events-none w-full h-full" />
                     </div>
                     <div className="flex flex-col justify-center md:pt-28 pt-4 w-full max-w-sm">
                         <h2 className="text-gray-600 text-sm mb-2 absolute lg:-top-10 -top-4 right-4">
