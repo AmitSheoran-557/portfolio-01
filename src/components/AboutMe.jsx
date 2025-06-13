@@ -154,7 +154,7 @@ const AboutMe = () => {
                     {hasTyped ? (
                         <>
                             <Typewriter
-                                words={["I'm Amit, a frontend developer from Singhani, deeply passionate about UI/UX design and frontend performance. I specialize in crafting elegant and performant user interfaces using "]}
+                                words={["I'm Amit, a frontend developer, deeply passionate about UI/UX design and frontend performance. I specialize in crafting elegant and performant user interfaces using "]}
                                 loop={1}
                                 typeSpeed={10}
                                 delaySpeed={500}

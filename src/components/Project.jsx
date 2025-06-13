@@ -159,7 +159,7 @@ const Project = () => {
                         ))}
                     </div>
                     <div className="mt-12 project-btn flex justify-center">
-                        <Link href="/projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
+                        <Link href="/all-projects" className="bg-slate-600 mx-auto text-white px-6 py-2 rounded-lg hover:bg-transparent border border-transparent hover:border-slate-600 hover:text-slate-600 transform transition-all ease-linear duration-300 inline-block">See All Projects</Link>
                     </div>
                 </div>
 

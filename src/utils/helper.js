@@ -18,7 +18,7 @@ export const HEADER_DATA_LIST = [
     },
     {
         title: "Projects",
-        path: "/projects",
+        path: "/all-projects",
     },
     {
         title: "Skills",
@@ -78,7 +78,7 @@ export const ABOUT_ME_CARDS_DATA = [
 
 export const PROJECTS_DATA_LIST = [
     {
-        title: "Zelt",
+        title: "Zelt / Clone",
         description: "Zelt built with HTML, Canvas, Tailwind CSS, locomotive and hosted on Vercel.",
         image: "/assets/images/webp/project-thumbnail-img-1.webp",
         link: "https://zelt-one.vercel.app/",
@@ -87,7 +87,7 @@ export const PROJECTS_DATA_LIST = [
         showInProjects: true,
     },
     {
-        title: "Cyber Fiction Website | HTML & Tailwind CSS",
+        title: "Cyber Fiction Website | HTML & Tailwind CSS / Clone",
         description: "A responsive Cyber Fiction platform built with HTML, canvas, locomotive, Tailwind CSS,",
         image: "/assets/images/webp/project-thumbnail-img-2.webp",
         link: "https://cyber-fiction-lyart.vercel.app/",
@@ -96,7 +96,7 @@ export const PROJECTS_DATA_LIST = [
         showInProjects: true,
     },
     {
-        title: "Allsome / A Copy Platform",
+        title: "Allsome / Clone",
         description: "Sell & ship everywhere. Turn inventory into sales channels and grow faster.",
         image: "/assets/images/webp/project-thumbnail-img-3.webp",
         link: "https://allsome-next-xi.vercel.app/",
@@ -123,7 +123,7 @@ export const PROJECTS_DATA_LIST = [
         showInProjects: false,
     },
     {
-        title: "Allsome / A Copy Platform",
+        title: "Allsome / Clone",
         description: "Sell & ship everywhere. Turn inventory into sales channels and grow faster.",
         image: "/assets/images/webp/project-thumbnail-img-3.webp",
         link: "https://allsome-next-xi.vercel.app/",
